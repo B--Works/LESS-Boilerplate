@@ -1,0 +1,37 @@
+// Breakpoints
+// http://stackoverflow.com/questions/21337327/can-you-create-custom-breakpoints-with-less-mixins
+// Usage: .bp(768px, { display: block; });
+
+.bp(@point, @rules) {
+	@media screen and (min-width: @point) {
+		@rules();
+	}
+}
+
+.mbp(@point, @rules) {
+	@media screen and (max-width: @point) {
+		@rules();
+	}	
+}
+
+// Browser bars
+// Usage: .bars(color-value)
+
+.bars(@color) {
+	&:before, &:after {
+		background-color: @color;
+		bottom: 0;
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	&:before {
+		left: 100%;
+	}
+
+	&:after {
+		right: 100%;
+	}
+}

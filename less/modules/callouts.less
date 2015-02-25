@@ -1,0 +1,145 @@
+.callout-container {
+	clear: both;
+	margin: 0 auto;
+	max-width: @wrap-width;
+
+	.home & {
+		background-color: #000;
+		border-top: 3px solid #fff;
+		padding-top, 20px;
+		position: relative;
+		.bars(#000);
+	}
+}
+
+.callout {
+	border-bottom: solid 1px @border-color;
+	margin-bottom, 15px;
+	margin-top, 15px;
+	padding, 15px;
+
+	&:last-child {
+		border-bottom: none;
+		padding-bottom: 0;
+
+		.bit-2 & {
+			border-bottom: 1px solid @border-color;
+			padding-bottom, 15px;
+		}
+	}
+
+	.schedule-block a {
+		color: #000;
+		font-weight: bolder;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 15px;
+		font-family: @alt-font;
+	}
+
+	.bp(@m, {
+		border-bottom: none;
+		border-right: solid 1px @border-color;
+		margin-bottom, 0;
+
+		.bit-2 & {
+			margin-bottom: 0;
+		}
+
+		&:last-child {
+			border-right: none;
+			margin-right: 0;
+
+			.bit-2 & {
+				border-right: solid 1px @border-color;
+				border-bottom: none;
+				margin-top: 0;
+			}
+
+			.top .bit-2 & {
+				border: none;
+			}
+
+			.right & {
+				border-top: 1px solid @border-color;
+			}
+
+			.locations & {
+				border-top: 0px solid @border-color;
+			}
+		}
+
+		.top & {
+			border: none;
+			margin: 15px 0 0;
+			padding: 0;
+
+			h2, p {
+				margin: 15px;
+			}
+			h2 {
+				margin-bottom: 8px;
+			}
+		}
+
+		.tips {
+			border: none;
+			margin: 15px 0 0;
+			padding: 0;
+
+			p, li {
+				text-align: left;
+			}
+			li {
+				line-height: 20px;
+			}
+		}
+
+		.schedule-block {
+			text-align: left;
+			margin-left: 2em;
+			margin-top: 1.5em;
+		}
+	});
+
+	// Full width callouts
+	&.full {
+		float: left;
+		text-align: left;
+
+		.inner {
+			margin: 0 auto;
+			width: 100%;
+			max-width: @wrap-width;
+		}
+	}
+	// Styles applied to :last-child to override styles for column callouts
+	&.full:last-child {
+		background-color: @callout-background;
+		margin: 0 auto;
+		padding: 0;
+		position: relative;
+		
+
+		&:before, &:after {
+			background-color: @callout-background;
+			bottom: 0;
+			content: '';
+			position: absolute;
+			top: 0;
+			width: 999em;
+		}
+
+		&:before {
+			left: 100%;
+		}
+
+		&:after {
+			right: 100%;
+		}
+	}
+
+	&.bit-3 {
+		border-right: 0;
+	}
+}

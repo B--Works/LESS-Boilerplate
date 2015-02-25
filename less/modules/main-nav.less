@@ -1,0 +1,66 @@
+.nav {
+	margin: 0;
+}
+
+.nav-main {
+	padding-left: 0;
+	position: absolute;
+	width: 100%;
+}
+
+.nav-item {
+	background-color: rgba(255, 196, 37, .85);
+	border-bottom: solid 1px #fff;
+	display: none;
+	font-weight: bold;
+	position: relative;
+	text-align: left;
+	text-transform: uppercase;
+
+	.open & {
+		display: block;
+	}
+
+	.bp(@m, {
+		display: block;
+	});
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	a {
+		color: #000;
+		display: block;
+		text-decoration: none;
+	}
+}
+
+// Mobile nav button
+.btn-toggle {
+	display: inline-block;
+	height: 2em;
+	overflow: hidden;
+	position: absolute;
+	padding-left: 2.25em;
+	right: 0;
+	width: 0;
+
+	.bp(@m, {
+		display: none;
+	});
+}
+.btn-toggle:before {
+	content: "";
+	position: absolute;
+	top: 0.25em;
+	left: 0;
+	width: 2em;
+	height: 0.25em;
+	border-top: 0.75em double #000;
+	border-bottom: 0.25em solid #000;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
